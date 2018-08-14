@@ -1,4 +1,13 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+//= require jquery
+//= require nprogress
+//= require bootstrap
+//= require icheck/icheck.min
+//= require moment/moment.min
+//= require datepicker/daterangepicker
+//= require custom
+//= require datepicker
+//= require datepicker1
+//= require load_button
