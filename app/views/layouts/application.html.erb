@@ -10,6 +10,16 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container body">
+      <div class="main_container">
+        <%= render "layouts/sidebar" %>
+        <%= render "layouts/top_nav" %>
+        <div class="right_col" role="main">
+          <%= yield %>
+          <%= render "layouts/footer" %>
+        </div>
+      </div>
+    </div>
+    <%= render "layouts/custom_notifications" %>
   </body>
 </html>

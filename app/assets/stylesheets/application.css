@@ -1,4 +1,8 @@
 /*
- *= require_tree .
+ *= require style_bootstrap
+ *= require font-awesome
+ *= require animate.min
+ *= require custom
+ *= require icheck/flat/green
  *= require_self
  */
