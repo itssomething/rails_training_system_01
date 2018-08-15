@@ -6,6 +6,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   </head>
 
@@ -14,7 +15,7 @@
       <div class="main_container">
         <%= render "layouts/sidebar" %>
         <%= render "layouts/top_nav" %>
-        <div class="right_col" role="main">
+        <div class="right_col" role="main" style="min-height: 800px;">
           <%= yield %>
           <%= render "layouts/footer" %>
         </div>
