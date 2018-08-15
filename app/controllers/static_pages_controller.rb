@@ -1,4 +1,6 @@
 class StaticPagesController < ApplicationController
+  before_action :login
+
   def home; end
 
   def subject; end
@@ -12,4 +14,11 @@ class StaticPagesController < ApplicationController
   def profile; end
 
   def edit_profile; end
+  private
+
+  def login
+    return if user_signed_in?
+    flash[:danger] = "Please Login"
+    redirect_to new_user_session_path
+  end
 end
