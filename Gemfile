@@ -7,6 +7,7 @@ gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap-sass", "3.3.7"
 gem "carrierwave", "1.2.2"
 gem "config"
+gem "devise"
 gem "font-awesome-rails"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails", "~> 4.3"
