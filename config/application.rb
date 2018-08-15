@@ -14,6 +14,8 @@ require "sprockets/railtie"
 
 Bundler.require(*Rails.groups)
 
+Dotenv::Railtie.load
+
 module RailsTrainingSystem01
   class Application < Rails::Application
     config.load_defaults 5.2
