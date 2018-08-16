@@ -7,7 +7,7 @@
     <div class="title_right">
     <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
       <div class="input-group">
-      <input type="text" class="form-control" placeholder="Search for...">
+      <input type="text" class="form-control" placeholder=<%= t "search" %>>
       <span class="input-group-btn">
         <button class="btn btn-default" type="button">
           <%= t "search_course" %>
@@ -31,9 +31,6 @@
           <table class="table table-striped jambo_table bulk_action">
             <thead>
               <tr class="headings">
-                <th>
-                  <input type="checkbox" id="check-all" class="flat">
-                </th>
                 <th class="column-title">
                   <%= t "name" %>
                 </th>
@@ -53,31 +50,37 @@
               </tr>
             </thead>
             <tbody>
-              <% @subject.each do |subject| %>
-                <tr class="even pointer">
-                  <td class="a-center ">
-                    <input type="checkbox" class="flat" name="table_records">
-                  </td>
-                  <td class=" ">
-                    <%= hidden_field_tag "subject_id", subject.id %>
-                    <%= subject.name %>
-                  </td>
-                  <td class=" ">
-                    <%= subject.detail %>
-                  </td>
-                  <td class=" ">
-                    <%= subject.get_category %>
-                  </td>
-                  <td class=" ">
-                    <%= subject.get_status %>
-                  </td>
-                  <td class="last">
-                    <%= link_to t(".view_subject"), "#" %>
-                  </td>
-                </tr>
+              <% @subjects.each do |subject| %>
+                <%= form_for subject, url: subject_path(subject), method: :patch do |f| %>
+                  <tr class="even pointer">
+                    <td class=" ">
+                      <%= hidden_field_tag "subject_id", subject.id %>
+                      <%= subject.name %>
+                    </td>
+                    <td class=" ">
+                      <%= subject.detail %>
+                    </td>
+                    <td class=" ">
+                      <%= subject.get_category %>
+                    </td>
+                    <td class="">
+                        <%= radio_button_tag :status, "0", subject.active?,
+                          class: "update-subject", data: {id: subject.id} %>
+                        <%= label_tag :category_0, "Active", class: "field-label" %>
+                        <br>
+                        <%= radio_button_tag :status, "1", subject.unactive?,
+                          class: "update-subject", data: {id: subject.id} %>
+                        <%= label_tag :category_1, "Unactive" ,class: "field-label" %>
+                    </td>
+                    <td class="last">
+                      <%= link_to t(".view_course"), user_subject_path(subject.id) %>
+                    </td>
+                  </tr>
+                <% end %>
               <% end %>
             </tbody>
           </table>
+          <%= link_to t("back"), root_url, class: "btn btn-success" %>
         </div>
         </div>
       </div>

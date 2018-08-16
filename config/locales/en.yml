@@ -36,6 +36,7 @@ en:
   inprogess: "Inprogess"
   end: "End"
   current_subject: "Current Subject"
+  search: "Search"
   courses:
     new:
       name: "Name"

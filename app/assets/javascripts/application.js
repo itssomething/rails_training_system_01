@@ -12,3 +12,5 @@
 //= require summernote-init
 //= require activestorage
 //= require turbolinks
+//= require update_subject
+//= require update_user_subject
