@@ -18,3 +18,13 @@ end
     course_id: rand(1..10)
   )
 end
+
+10.times do
+  Subject.create!(
+    name: Faker::Cat.name,
+    detail: Faker::Cat.registry,
+    category: Faker::Number.between(0,1),
+    status: Faker::Number.between(0,2)
+  )
+end
+
