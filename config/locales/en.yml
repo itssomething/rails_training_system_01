@@ -2,7 +2,7 @@ en:
   app_name: "LiHu Team"
   language: "Language"
   en: English
-  load_data_fail: "Khong co du lieu"
+  load_data_fail: "Can't not find nothing"
   please_login: "Please Login"
   course_type_practice: "Practice"
   course_type_open: "Open"
@@ -37,6 +37,10 @@ en:
   end: "End"
   current_subject: "Current Subject"
   search: "Search"
+  success: "Success"
+  no_success: "Fail"
+  view_subject: "view Subject"
+  edit_subject: "Edit Subject"
   courses:
     new:
       name: "Name"
