@@ -6,11 +6,11 @@ class Course < ApplicationRecord
     cate = self.category
     case cate
     when 0
-      return "Practice"
+      return I18n.t("course_type_practice")
     when 1
-      return "Open"
+      return I18n.t("course_type_open")
     else
-      return "Intern"
+      return I18n.t("course_type_intern")
     end
   end
 end
