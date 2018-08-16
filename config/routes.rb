@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "courses/index"
+  get "courses/show"
   devise_for :users
   root "static_pages#home"
   get "static_pages/subject"

@@ -19,6 +19,7 @@ gem "simple_form"
 gem "summernote-rails"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
+gem "faker", git: "https://github.com/stympy/faker.git", branch: "master"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
