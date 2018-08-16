@@ -9,6 +9,20 @@ class SubjectsController < ApplicationController
     redirect_to root_url
   end
 
+  def new; end
+
+  def create
+    subject = Subject.new subject_params
+    
+    if subject.save
+      flash[:success] = t "success"
+      redirect_to subjects_path
+    else
+      flash[:danger] = t "no_success"
+      render :new
+    end
+  end
+
   def edit; end
 
   def update
