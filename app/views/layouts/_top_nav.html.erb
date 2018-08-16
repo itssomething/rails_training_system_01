@@ -6,30 +6,23 @@
       </div>
       <ul class="nav navbar-nav navbar-right">
         <li class="">
-          <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <%= image_tag "img.jpg" %>John Doe
-              <span class=" fa fa-angle-down"></span>
-          </a>
+        <%= image_tag current_user.avatar if current_user.avatar? %>
+        <%= link_to "#", class: "dropdown-toggle", data: {toggle: "dropdown"} do %>
+          <%= current_user.name %><b class="caret"></b>
+        <% end %>
           <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
-            <li><a href="javascript:;">  Profile</a>
+            <li>
+              <%= link_to "Edit profile", edit_user_registration_path, :class => "navbar-link" %>
             </li>
             <li>
-              <a href="javascript:;">
-                <span class="badge bg-red pull-right">50%</span>
-                <span>Settings</span>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:;">Help</a>
-            </li>
-            <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "navbar-link"  %>
             </li>
           </ul>
         </li>
         <li role="presentation" class="dropdown">
           <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
             <i class="fa fa-envelope-o"></i>
-            <span class="badge bg-green">6</span>
+            <span class="badge bg-green">137</span>
           </a>
           <ul id="menu1" class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu">
             <li>
@@ -46,49 +39,7 @@
                 </span>
               </a>
             </li>
-            <li>
-              <a>
-                <span class="image">
-                  <%= image_tag "img.jpg", alt: "Profile Image" %>
-                </span>
-                <span>
-                  <span>John Smith</span>
-                  <span class="time">3 mins ago</span>
-                </span>
-                <span class="message">
-                  Film festivals used to be do-or-die moments for movie makers. They were where...
-                </span>
-              </a>
-            </li>
-            <li>
-              <a>
-                <span class="image">
-                  <%= image_tag "img.jpg", alt: "Profile Image" %>
-                </span>
-                <span>
-                  <span>John Smith</span>
-                  <span class="time">3 mins ago</span>
-                </span>
-                <span class="message">
-                  Film festivals used to be do-or-die moments for movie makers. They were where...
-                </span>
-              </a>
-            </li>
-            <li>
-              <a>
-                <span class="image">
-                  <%= image_tag "img.jpg", alt: "Profile Image" %>
-                </span>
-                <span>
-                  <span>John Smith</span>
-                  <span class="time">3 mins ago</span>
-                </span>
-                <span class="message">
-                  Film festivals used to be do-or-die moments for movie makers. They were where...
-                </span>
-              </a>
-            </li>
-            <li>
+              <li>
               <div class="text-center">
                 <a href="inbox.html">
                   <strong>See All Alerts</strong>
