@@ -18,7 +18,7 @@ class StaticPagesController < ApplicationController
 
   def login
     return if user_signed_in?
-    flash[:danger] = "Please Login"
+    flash[:danger] = t "please_login"
     redirect_to new_user_session_path
   end
 end

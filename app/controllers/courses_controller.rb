@@ -3,7 +3,7 @@ class CoursesController < ApplicationController
     @course = Course.all
 
     return if @course
-    flash[:danger] = "Khong co du lieu"
+    flash[:danger] = t "load_data_fail"
     redirect_to root_url
   end
 end

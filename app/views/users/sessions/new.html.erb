@@ -1,4 +1,4 @@
-<h1 class="text-login">LOGIN</h1>
+<h1 class="text-login"><%= t "login" %></h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -12,10 +12,10 @@
 
       <%= f.label :remember_me, class: "checkbox inline mgl-20" do %>
         <%= f.check_box :remember_me %>
-        <span> "remember_me" </span>
+        <span><% t "remember_me" %></span>
       <% end %>
 
-      <%= f.submit "login", class: "btn btn-primary" %>
+      <%= f.submit t("login"), class: "btn btn-primary" %>
     <% end %>
 
   </div>
