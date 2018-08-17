@@ -44,8 +44,11 @@
               <%= t "category" %>
             </th>
             <th class="column-title no-link last"><span class="nobr">
-              <%= t "action" %>
+              <%= t "view_course" %>
             </span>
+            </th>
+            <th class="column-title">
+              <%= t ".edit" %>
             </th>
           </tr>
         </thead>
@@ -65,8 +68,11 @@
               <td class=" ">
                 <%= course.get_category %>
               </td>
-              <td class="last">
+              <td class="">
                 <%= link_to t(".view_course"), user_course_path(course.id) %>
+              </td>
+              <td class="last">
+                <%= link_to t(".edit_course"), edit_course_path(course.id) %>
               </td>
             </tr>
           <% end %>

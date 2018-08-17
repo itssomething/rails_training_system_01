@@ -36,3 +36,18 @@ en:
   inprogess: "Inprogess"
   end: "End"
   current_subject: "Current Subject"
+  courses:
+    new:
+      name: "Name"
+      detail: "Detail"
+      submit: "Submit"
+    create:
+      failed: "Create course failed"
+      created: "Course created"
+    edit:
+      edit_course: "Edit course"
+      submit: "Submit"
+  shared:
+    error_messages:
+      error: "error"
+
