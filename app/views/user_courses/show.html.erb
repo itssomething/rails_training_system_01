@@ -3,19 +3,6 @@
   <div class="title_left">
     <h3><%= t "current_course" %></h3>
   </div>
-
-  <div class="title_right">
-  <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-    <div class="input-group">
-    <input type="text" class="form-control" placeholder="Search for...">
-    <span class="input-group-btn">
-        <button class="btn btn-default" type="button">
-          <%= t "search_course" %>
-        </button>
-    </span>
-    </div>
-  </div>
-  </div>
 </div>
 
 <div class="clearfix"></div>
@@ -38,35 +25,39 @@
               <%= t "name" %>
             </th>
             <th class="column-title">
-              <%= t "detail" %>
+              <%= t "email" %>
             </th>
             <th class="column-title">
-              <%= t "category" %>
+              <%= t "progress" %>
             </th>
-            <th class="column-title no-link last"><span class="nobr">
-              <%= t "action" %>
-            </span>
+            <th class="column-title">
+              <%= t "start_date" %>
+            </th>
+            <th class="column-title">
+              <%= t "end_date" %>
             </th>
           </tr>
         </thead>
         <tbody>
-          <% @course.each do |course| %>
+          <% @user_courses.each do |user_course| %>
             <tr class="even pointer">
               <td class="a-center ">
                 <input type="checkbox" class="flat" name="table_records">
               </td>
               <td class=" ">
-                <%= hidden_field_tag "course_id", course.id %>
-                <%= course.name %>
+                <%= user_course.user.name %>
               </td>
               <td class=" ">
-                <%= course.detail %>
+                <%= user_course.user.email %>
               </td>
               <td class=" ">
-                <%= course.get_category %>
+                <%= user_course.progress %>
               </td>
-              <td class="last">
-                <%= link_to t(".view_course"), user_course_path(course.id) %>
+              <td class=" ">
+                <%= user_course.start_date %>
+              </td>
+              <td class=" ">
+                <%= user_course.end_date %>
               </td>
             </tr>
           <% end %>
@@ -78,3 +69,4 @@
   </div>
 </div>
 </div>
+

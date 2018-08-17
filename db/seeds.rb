@@ -8,3 +8,13 @@ User.create!(name: "Example User", email: "huyencherry13796@gmail.com",
     category: Faker::Number.between(0,1)
   )
 end
+
+2.times do
+  UserCourse.create!(
+    progress: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100].sample,
+    start_date: Faker::Date.between(20.days.ago, Date.today),
+    end_date: Faker::Date.between(Date.today, 20.days.from_now),
+    user_id: 1,
+    course_id: rand(1..10)
+  )
+end
