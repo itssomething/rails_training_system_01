@@ -17,12 +17,15 @@
         <%= render "layouts/sidebar" %>
         <%= render "layouts/top_nav" %>
         <div class="right_col" role="main">
+          <br>
+          <% flash.each do |key, value| %>
+            <div class="alert alert-<%= key %> flash"><%= value %></div>
+          <% end %>
           <%= yield %>
           <%= render "layouts/footer" %>
         </div>
       </div>
     </div>
-    <%= render "layouts/custom_notifications" %>
   </body>
   <% else %>
   <body style="background: #F7F7F7">
