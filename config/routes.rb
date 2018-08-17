@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     get "static_pages/profile"
     get "static_pages/edit_profile"
     resources :user_courses
+    get "subjects/show"
   end
 end
