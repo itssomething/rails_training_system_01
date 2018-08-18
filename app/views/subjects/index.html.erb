@@ -43,9 +43,13 @@
                 <th class="column-title">
                   <%= t "status" %>
                 </th>
+                <th class="column-title"><span class="nobr">
+                  <%= t "action" %>
+                  </span>
+                </th>
                 <th class="column-title no-link last"><span class="nobr">
                   <%= t "action" %>
-                </span>
+                  </span>
                 </th>
               </tr>
             </thead>
@@ -63,7 +67,7 @@
                     <td class=" ">
                       <%= subject.get_category %>
                     </td>
-                    <td class="">
+                    <td class=" ">
                         <%= radio_button_tag :status, "0", subject.active?,
                           class: "update-subject", data: {id: subject.id} %>
                         <%= label_tag :category_0, "Active", class: "field-label" %>
@@ -72,8 +76,11 @@
                           class: "update-subject", data: {id: subject.id} %>
                         <%= label_tag :category_1, "Unactive" ,class: "field-label" %>
                     </td>
+                    <td class=" ">
+                      <%= link_to t("view_subject"), user_subject_path(subject.id) %>
+                    </td>
                     <td class="last">
-                      <%= link_to t(".view_course"), user_subject_path(subject.id) %>
+                      <%= link_to t("edit_subject"), edit_subject_path(subject.id) %>
                     </td>
                   </tr>
                 <% end %>
