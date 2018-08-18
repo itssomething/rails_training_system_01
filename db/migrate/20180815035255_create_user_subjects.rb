@@ -7,6 +7,7 @@ class CreateUserSubjects < ActiveRecord::Migration[5.2]
       t.date :end_date
       t.references :user, foreign_key: true
       t.references :subject, foreign_key: true
+      t.references :user_course, foreign_key: true
 
       t.timestamps
     end

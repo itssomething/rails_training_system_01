@@ -68,9 +68,11 @@ ActiveRecord::Schema.define(version: 2018_08_15_035412) do
     t.date "end_date"
     t.bigint "user_id"
     t.bigint "subject_id"
+    t.bigint "user_course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subject_id"], name: "index_user_subjects_on_subject_id"
+    t.index ["user_course_id"], name: "index_user_subjects_on_user_course_id"
     t.index ["user_id"], name: "index_user_subjects_on_user_id"
   end
 
@@ -100,5 +102,6 @@ ActiveRecord::Schema.define(version: 2018_08_15_035412) do
   add_foreign_key "user_reports", "user_subjects"
   add_foreign_key "user_reports", "users"
   add_foreign_key "user_subjects", "subjects"
+  add_foreign_key "user_subjects", "user_courses"
   add_foreign_key "user_subjects", "users"
 end

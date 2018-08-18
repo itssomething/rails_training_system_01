@@ -1,0 +1,81 @@
+<div class="">
+  <div class="page-title">
+    <div class="title_left">
+      <h3><%= t "current_course" %></h3>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div class="row">
+    <div class="clearfix"></div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_content">
+
+          <div class="table-responsive">
+            <table class="table table-striped jambo_table bulk_action">
+              <thead>
+                <tr class="headings">
+                  <th class="column-title">
+                    <%= t "name" %>
+                  </th>
+                  <th class="column-title">
+                    <%= t "email" %>
+                  </th>
+                  <th class="column-title">
+                    <%= t "progress" %>
+                  </th>
+                  <th class="column-title">
+                    <%= t "status" %>
+                  </th>
+                  <th class="column-title">
+                    <%= t "start_date" %>
+                  </th>
+                  <th class="column-title">
+                    <%= t "end_date" %>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @user_subjects.each do |user_subject| %>
+                  <%= form_for user_subject, url: user_subject_path(user_subject), method: :patch do |f| %>
+                    <tr class="even pointer">
+                      <td class=" ">
+                        <%= user_subject.user.name %>
+                      </td>
+                      <td class=" ">
+                        <%= user_subject.user.email %>
+                      </td>
+                      <td class=" ">
+                        <%= user_subject.progress %>%
+                      </td>
+                      <td class="">
+                        <%= radio_button_tag :status, "0", user_subject.active?,
+                          class: "update-user-subject", data: {id: user_subject.id} %>
+                        <%= label_tag :category_0, "Active", class: "field-label" %>
+                        <br>
+                        <%= radio_button_tag :status, "1", user_subject.unactive?,
+                          class: "update-user-subject", data: {id: user_subject.id} %>
+                        <%= label_tag :category_1, "Unactive" ,class: "field-label" %>
+                    </td>
+                      <td class=" ">
+                        <%= user_subject.start_date %>
+                      </td>
+                      <td class=" ">
+                        <%= user_subject.end_date %>
+                      </td>
+                    </tr>
+                  <% end %>
+                <% end %>
+              </tbody>
+            </table>
+            <%= link_to t("back"), subjects_path, class: "btn btn-success" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

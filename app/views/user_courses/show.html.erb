@@ -1,72 +1,72 @@
 <div class="">
-<div class="page-title">
-  <div class="title_left">
-    <h3><%= t "current_course" %></h3>
+  <div class="page-title">
+    <div class="title_left">
+      <h3><%= t "current_course" %></h3>
+    </div>
   </div>
-</div>
 
-<div class="clearfix"></div>
-
-<div class="row">
   <div class="clearfix"></div>
 
-  <div class="col-md-12 col-sm-12 col-xs-12">
-  <div class="x_panel">
-    <div class="x_content">
+  <div class="row">
+    <div class="clearfix"></div>
 
-    <div class="table-responsive">
-      <table class="table table-striped jambo_table bulk_action">
-        <thead>
-          <tr class="headings">
-            <th>
-              <input type="checkbox" id="check-all" class="flat">
-            </th>
-            <th class="column-title">
-              <%= t "name" %>
-            </th>
-            <th class="column-title">
-              <%= t "email" %>
-            </th>
-            <th class="column-title">
-              <%= t "progress" %>
-            </th>
-            <th class="column-title">
-              <%= t "start_date" %>
-            </th>
-            <th class="column-title">
-              <%= t "end_date" %>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @user_courses.each do |user_course| %>
-            <tr class="even pointer">
-              <td class="a-center ">
-                <input type="checkbox" class="flat" name="table_records">
-              </td>
-              <td class=" ">
-                <%= user_course.user.name %>
-              </td>
-              <td class=" ">
-                <%= user_course.user.email %>
-              </td>
-              <td class=" ">
-                <%= user_course.progress %>
-              </td>
-              <td class=" ">
-                <%= user_course.start_date %>
-              </td>
-              <td class=" ">
-                <%= user_course.end_date %>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_content">
+
+          <div class="table-responsive">
+            <table class="table table-striped jambo_table bulk_action">
+              <thead>
+                <tr class="headings">
+                  <th>
+                    <input type="checkbox" id="check-all" class="flat">
+                  </th>
+                  <th class="column-title">
+                    <%= t "name" %>
+                  </th>
+                  <th class="column-title">
+                    <%= t "email" %>
+                  </th>
+                  <th class="column-title">
+                    <%= t "progress" %>
+                  </th>
+                  <th class="column-title">
+                    <%= t "start_date" %>
+                  </th>
+                  <th class="column-title">
+                    <%= t "end_date" %>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @user_courses.each do |user_course| %>
+                  <tr class="even pointer">
+                    <td class="a-center ">
+                      <input type="checkbox" class="flat" name="table_records">
+                    </td>
+                    <td class=" ">
+                      <%= user_course.user.name %>
+                    </td>
+                    <td class=" ">
+                      <%= user_course.user.email %>
+                    </td>
+                    <td class=" ">
+                      <%= user_course.progress %>
+                    </td>
+                    <td class=" ">
+                      <%= user_course.start_date %>
+                    </td>
+                    <td class=" ">
+                      <%= user_course.end_date %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  </div>
-</div>
 </div>
 
