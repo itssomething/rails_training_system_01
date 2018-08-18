@@ -41,6 +41,8 @@ en:
   no_success: "Fail"
   view_subject: "view Subject"
   edit_subject: "Edit Subject"
+  create_subject: "Create Subject"
+  create: "Create"
   courses:
     new:
       name: "Name"
