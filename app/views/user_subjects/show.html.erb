@@ -36,11 +36,15 @@
                   <th class="column-title">
                     <%= t "end_date" %>
                   </th>
+                  <th class="column-title">
+                    <%= t "edit_user_subject" %>
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 <% @user_subjects.each do |user_subject| %>
-                  <%= form_for user_subject, url: user_subject_path(user_subject), method: :patch do |f| %>
+                  <%= form_for user_subject, url: user_subject_path(user_subject),
+                    method: :patch do |f| %>
                     <tr class="even pointer">
                       <td>
                         <%= user_subject.user.name %>
@@ -49,7 +53,7 @@
                         <%= user_subject.user.email %>
                       </td>
                       <td>
-                        <%= user_subject.progress %>
+                        <%= user_subject.progress %>%
                       </td>
                       <td>
                         <%= radio_button_tag :status, "0", user_subject.active?,
@@ -66,6 +70,10 @@
                       <td>
                         <%= user_subject.end_date %>
                       </td>
+                      <td class="last">
+                        <%= link_to t("edit_user_subject"),
+                          edit_user_subject_path(user_subject.id) %>
+                      </td>
                     </tr>
                   <% end %>
                 <% end %>
@@ -78,4 +86,3 @@
     </div>
   </div>
 </div>
-

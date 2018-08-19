@@ -39,10 +39,14 @@ en:
   search: "Search"
   success: "Success"
   no_success: "Fail"
-  view_subject: "view Subject"
+  view_subject: "View Subject"
   edit_subject: "Edit Subject"
   create_subject: "Create Subject"
   create: "Create"
+  start_date: "Start Date"
+  end_date: "End Date"
+  edit_user_subject: "Edit User Subject"
+  current_user_subject: "Current User Subject"
   courses:
     new:
       name: "Name"
