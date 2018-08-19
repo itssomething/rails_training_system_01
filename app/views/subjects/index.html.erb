@@ -44,11 +44,11 @@
                   <%= t "status" %>
                 </th>
                 <th class="column-title"><span class="nobr">
-                  <%= t "action" %>
+                  <%= t "view_subject" %>
                   </span>
                 </th>
                 <th class="column-title no-link last"><span class="nobr">
-                  <%= t "action" %>
+                  <%= t "edit_subject" %>
                   </span>
                 </th>
               </tr>
@@ -57,17 +57,17 @@
               <% @subjects.each do |subject| %>
                 <%= form_for subject, url: subject_path(subject), method: :patch do |f| %>
                   <tr class="even pointer">
-                    <td class=" ">
+                    <td>
                       <%= hidden_field_tag "subject_id", subject.id %>
                       <%= subject.name %>
                     </td>
-                    <td class=" ">
+                    <td>
                       <%= subject.detail %>
                     </td>
-                    <td class=" ">
+                    <td>
                       <%= subject.get_category %>
                     </td>
-                    <td class=" ">
+                    <td>
                         <%= radio_button_tag :status, "0", subject.active?,
                           class: "update-subject", data: {id: subject.id} %>
                         <%= label_tag :category_0, "Active", class: "field-label" %>
@@ -76,7 +76,7 @@
                           class: "update-subject", data: {id: subject.id} %>
                         <%= label_tag :category_1, "Unactive" ,class: "field-label" %>
                     </td>
-                    <td class=" ">
+                    <td>
                       <%= link_to t("view_subject"), user_subject_path(subject.id) %>
                     </td>
                     <td class="last">

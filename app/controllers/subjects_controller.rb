@@ -26,7 +26,6 @@ class SubjectsController < ApplicationController
   def edit; end
 
   def update
-    byebug
     if params[:subject][:name]
       update_subject
     else
