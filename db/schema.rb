@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_15_035412) do
+ActiveRecord::Schema.define(version: 2018_08_20_031601) do
 
   create_table "course_subjects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "subject_id"
@@ -68,11 +68,9 @@ ActiveRecord::Schema.define(version: 2018_08_15_035412) do
     t.date "end_date"
     t.bigint "user_id"
     t.bigint "subject_id"
-    t.bigint "user_course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subject_id"], name: "index_user_subjects_on_subject_id"
-    t.index ["user_course_id"], name: "index_user_subjects_on_user_course_id"
     t.index ["user_id"], name: "index_user_subjects_on_user_id"
   end
 
@@ -82,7 +80,7 @@ ActiveRecord::Schema.define(version: 2018_08_15_035412) do
     t.string "phone"
     t.string "avatar"
     t.string "address"
-    t.integer "type"
+    t.integer "trainee_type"
     t.integer "role"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -102,6 +100,5 @@ ActiveRecord::Schema.define(version: 2018_08_15_035412) do
   add_foreign_key "user_reports", "user_subjects"
   add_foreign_key "user_reports", "users"
   add_foreign_key "user_subjects", "subjects"
-  add_foreign_key "user_subjects", "user_courses"
   add_foreign_key "user_subjects", "users"
 end

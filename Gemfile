@@ -14,6 +14,7 @@ gem "jquery-rails", "~> 4.3"
 gem "puma", "~> 3.11"
 gem "rails", "~> 5.2.0"
 gem "rubocop", "~> 0.54.0", require: false
+gem "roo"
 gem "sass-rails", "~> 5.0"
 gem "simple_form"
 gem "summernote-rails"

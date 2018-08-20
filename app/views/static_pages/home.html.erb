@@ -3,3 +3,14 @@
     <%= link_to  "New course", new_course_path, class: "btn btn-primary" %>
   </div>
 </div>
+<div>
+  <h4>Import trainee</h4>
+  <%= form_tag import_users_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import" %>
+  <% end %>
+</div>
+<div>
+  <h4>Assign course to single user</h4>
+  <%= link_to "Assign", new_user_course_path, {:remote => true, "data-toggle" => "modal", "data-target" => "#modal-window"} %>
+</div>
