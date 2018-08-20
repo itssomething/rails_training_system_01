@@ -9,9 +9,17 @@ Rails.application.routes.draw do
     get "static_pages/login"
     get "static_pages/profile"
     get "static_pages/edit_profile"
+    post "add_user", to: "user_add_by_trainers#create"
+
     resources :user_courses
     resources :subjects
     resources :user_subjects
     resources :courses
+    resources :users do
+      collection {post :import}
+    end
+    resources :admin, controller: "users", role: "Admin"
+    resources :trainer, controller: "users", role: "Trainer"
+    resources :trainee, controller: "users", role: "Trainee"
   end
 end

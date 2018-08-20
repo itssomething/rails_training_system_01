@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_15_035412) do
+ActiveRecord::Schema.define(version: 2018_08_21_025308) do
 
   create_table "course_subjects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "subject_id"
@@ -82,8 +82,8 @@ ActiveRecord::Schema.define(version: 2018_08_15_035412) do
     t.string "phone"
     t.string "avatar"
     t.string "address"
-    t.integer "type"
-    t.integer "role"
+    t.integer "trainee_type"
+    t.string "role"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

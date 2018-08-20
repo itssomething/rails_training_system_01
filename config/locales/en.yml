@@ -61,4 +61,10 @@ en:
   shared:
     error_messages:
       error: "error"
+  users:
+    new_modal:
+      submit: "Submit"
+  static_pages:
+    home:
+      import: "Import"
 

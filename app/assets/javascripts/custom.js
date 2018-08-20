@@ -321,3 +321,18 @@ if (typeof NProgress != 'undefined') {
         NProgress.done();
     });
 }
+
+
+// TRULLY CUSTOM JS
+$(document).on('turbolinks:load', function() {
+  $("input[name*='user[role]']").change(function(){
+    console.log("log");
+    if($(this).val() == 'trainee') {
+      $(this).parent().find('#trainee-type').removeClass('hide');
+      $(this).parent().find('#trainee-type').show();
+    }else{
+      $("input[name*='user[trainee_type]']").prop('checked', false);
+      $(this).parent().find('#trainee-type').hide();
+    }
+  });
+});
