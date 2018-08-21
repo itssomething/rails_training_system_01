@@ -1,0 +1,61 @@
+<div class="modal fade" id="modal-window-add-user" tabindex="-1"
+  role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"
+          aria-hidden="true">×</button>
+        <h3 id="myModalLabel"><%= t ".add user" %></h3>
+      </div>
+      <%= form_for @user, url: add_user_path do |f| %>
+        <div class="modal-body">
+          <%= render "shared/error_messages", object: f.object %>
+
+          <%= f.label :name, t(".name"), class: "field-label" %>
+          <%= f.text_field :name, class: "form-control field-input" %>
+
+          <%= f.label :email, t(".email"), class: "field-label" %>
+          <%= f.text_field :email, class: "form-control field-input" %>
+
+          <br>
+          <%= f.radio_button :role, "admin" %>
+          <%= f.label :role_admin, Settings.admin, class: "field-label" %>
+
+          <br>
+          <%= f.radio_button :role, "trainer" %>
+          <%= f.label :role_trainer, Settings.trainer, class: "field-label" %>
+
+          <br>
+          <%= f.radio_button :role, "trainee" %>
+          <%= f.label :role_trainee, Settings.trainee, class: "field-label",
+            id: "trainee-checkbox" %>
+
+          <div id="trainee-type" class="hide">
+            <br>
+            <p><b>Trainee type</b></p>
+
+            <%= f.radio_button :trainee_type, "open" %>
+            <%= f.label :trainee_type_open, Settings.open,
+              class: "field-label" %>
+
+            <br>
+            <%= f.radio_button :trainee_type, "practice" %>
+            <%= f.label :trainee_type_practice, Settings.practice,
+              class: "field-label" %>
+
+            <br>
+            <%= f.radio_button :trainee_type, "intern" %>
+            <%= f.label :trainee_type_intern, Settings.intern,
+              class: "field-label", id: "trainee-checkbox" %>
+          </div>
+        </div>
+        <br>
+        <div class="modal-footer">
+          <button class="btn btn-danger" data-dismiss="modal"
+            aria-hidden="true"><%= t ".close" %></button>
+          <%= f.submit t(".submit"), class: "btn btn-primary submit-button" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -18,7 +18,8 @@ class UserSubjectsController < ApplicationController
   private
 
   def user_subject_params
-    params.require(:user_subject).permit :progress, :start_date, :end_date, :status
+    params.require(:user_subject)
+          .permit :progress, :start_date, :end_date, :status
   end
 
   def update_user_subject

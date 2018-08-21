@@ -1,15 +1,15 @@
 class StaticPagesController < ApplicationController
   before_action :login
 
-  def home; end
+  def home
+    @user = User.new
+  end
 
   def subject; end
 
   def in_subject; end
 
   def report; end
-
-  def login; end
 
   def profile; end
 

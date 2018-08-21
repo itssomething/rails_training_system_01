@@ -3,3 +3,18 @@
     <%= link_to  "New course", new_course_path, class: "btn btn-primary" %>
   </div>
 </div>
+<div>
+  <h4><%= t ".import_csv" %></h4>
+  <%= form_tag import_users_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <br>
+    <%= submit_tag t(".import"), class: "btn btn-success" %>
+  <% end %>
+</div>
+<div>
+  <h4><%= t ".add_user" %></h4>
+  <button class="btn btn-primary" data-toggle="modal" data-target="#modal-window-add-user">
+    <%= t ".add_user" %>
+  </button>
+  <%= render "users/new_modal" %>
+</div>

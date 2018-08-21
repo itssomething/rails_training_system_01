@@ -13,7 +13,7 @@ class SubjectsController < ApplicationController
 
   def create
     subject = Subject.new subject_params
-    
+
     if subject.save
       flash[:success] = t "success"
       redirect_to subjects_path
