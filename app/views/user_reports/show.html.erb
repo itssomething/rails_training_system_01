@@ -1,0 +1,78 @@
+<div class="">
+  <div class="page-title">
+    <div class="title_left">
+      <h3><%= t "report" %></h3>
+    </div>
+
+    <div class="title_right">
+    <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+      <div class="input-group">
+      <input type="text" class="form-control" placeholder=<%= t "search" %>>
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">
+          <%= t "search_course" %>
+        </button>
+      </span>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div class="row">
+    <div class="clearfix"></div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_content">
+
+        <div id="modal-holder"></div>
+
+        <div class="table-responsive">
+          <table class="table table-striped jambo_table bulk_action">
+            <thead>
+              <tr class="headings">
+                <th class="column-title">
+                  <%= t "name_subject" %>
+                </th>
+                <th class="column-title">
+                  <%= t "created_at" %>
+                </th>
+                <th class="column-title">
+                  <%= t "title" %>
+                </th>
+                <th class="column-title no-link last"><span class="nobr">
+                  <%= t "view_detail_report" %>
+                  </span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @user_reports.each do |user_report| %>
+                <tr class="even pointer">
+                  <td>
+                    <%= hidden_field_tag "user_report_id", user_report.id %>
+                    <%= user_report.get_subject.name %>
+                  </td>
+                  <td>
+                    <%= user_report.created_at %>
+                  </td>
+                  <td>
+                    <%= user_report.title %>
+                  </td>
+                  <td class="last">
+                    <%= button_tag t("view_detail_report"), type: "button", class:"btn btn-primary btn-modal-view-report",
+                      data: {id: user_report.id} %>
+                    <%= render "view_detail" %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

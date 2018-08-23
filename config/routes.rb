@@ -22,5 +22,7 @@ Rails.application.routes.draw do
     resources :admin, controller: "users", role: "Admin"
     resources :trainer, controller: "users", role: "Trainer"
     resources :trainee, controller: "users", role: "Trainee"
+    resources :user_reports
+    resources :view_details
   end
 end

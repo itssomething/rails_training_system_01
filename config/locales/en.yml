@@ -47,6 +47,13 @@ en:
   end_date: "End Date"
   edit_user_subject: "Edit User Subject"
   current_user_subject: "Current User Subject"
+  title: "Title"
+  content: "Content"
+  created_at: "Created at"
+  close: "Close"
+  report: "Report"
+  name_subject: "Subject name"
+  view_detail_report: "View Detail"
   courses:
     new:
       name: "Name"
