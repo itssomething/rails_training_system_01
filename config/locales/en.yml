@@ -54,6 +54,7 @@ en:
   report: "Report"
   name_subject: "Subject name"
   view_detail_report: "View Detail"
+  submit: "Submit"
   courses:
     new:
       name: "Name"
