@@ -13,6 +13,7 @@ gem "font-awesome-rails"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails", "~> 4.3"
 gem "puma", "~> 3.11"
+gem "ransack", github: "activerecord-hackery/ransack"
 gem "rails", "~> 5.2.0"
 gem "roo"
 gem "rubocop", "~> 0.54.0", require: false

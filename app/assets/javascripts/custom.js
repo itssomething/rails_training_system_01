@@ -325,6 +325,9 @@ if (typeof NProgress != 'undefined') {
 
 // TRULLY CUSTOM JS
 $(document).on('turbolinks:load', function() {
+  var userids = [];
+
+  // DYNAMIC ADD TRAINEE TYPE SELECTOR WHEN SELECT TRAINEE
   $("input[name*='user[role]']").change(function(){
     console.log("log");
     if($(this).val() == 'trainee') {
@@ -335,4 +338,60 @@ $(document).on('turbolinks:load', function() {
       $(this).parent().find('#trainee-type').hide();
     }
   });
+
+  // LIVE SEARCH
+  $("#search-form").on("keyup", function(e) {
+    e.stopImmediatePropagation();
+    $.ajax({
+      method: "POST",
+      url: '/live_search',
+      data: {q: $(this).val()},
+    })
+    .done(function(response) {
+      $("#response").html(response.html);
+      for (var i = 0; i < userids.length; i++) {
+        var x = userids[i];
+        $('#button-add-' + x).prop('disabled', true);
+      }
+    });
+  });
+
+  // REMOVE USER FROM RIGHT WELL
+  $('body').on("click", ".remove-user", function(e){
+    e.stopImmediatePropagation();
+    $(this).parent().remove();
+    var id = $(this).attr('class').replace(/remove-user remove-user-/, '');
+    $('#button-add-' + id).prop('disabled', false);
+    for (var i = 0; i < userids.length; i++){
+      if(id == userids[i]){
+        userids.splice(i, 1);
+      }
+    }
+  });
+
+  // ADD USER BUTTON
+  $('body').on("click", ".add-user-btn", function(e){
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    $(this).parent().attr('id');
+    $("#user-well").append(
+      '<div>' + $(this).siblings().text()
+      + '<a class="remove-user remove-user-' + $(this).parent().attr('id') + '"> Remove<a>'
+      + '</div>' + '<br>');
+    $(this).prop('disabled', true);
+    userids.push($(this).parent().attr('id'));
+  });
+
+  // AJAX SUBMIT BUTTON
+  $('body').on('click', '#submit-user-course', function(e){
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    course_id = $('#user_course_course_id').find(':selected').val();
+    $.ajax({
+      method: "POST",
+      url: '/user_courses',
+      data: {user_ids: userids.toString(), course_id: course_id},
+    })
+  });
 });
+

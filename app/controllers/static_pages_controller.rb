@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
 
   def home
     @user = User.new
+    @user_course = UserCourse.new
   end
 
   def subject; end
