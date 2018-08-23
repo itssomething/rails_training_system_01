@@ -9,7 +9,9 @@ class SubjectsController < ApplicationController
     redirect_to root_url
   end
 
-  def new; end
+  def new
+    @subject = Subject.new
+  end
 
   def create
     subject = Subject.new subject_params

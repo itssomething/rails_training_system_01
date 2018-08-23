@@ -1,4 +1,7 @@
 en:
+  subject_type_Git: "Git"
+  subject_type_Ruby: "Ruby"
+  subject_type_Rails: "Rails"
   app_name: "LiHu Team"
   language: "Language"
   en: English
@@ -79,4 +82,7 @@ en:
     new_modal:
       submit: "Submit"
       search: "Search"
+  course_subjects:
+    new_modal:
+      submit: "Submit"
 

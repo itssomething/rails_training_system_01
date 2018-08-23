@@ -15,3 +15,4 @@
 //= require update_user_subject
 //= require view_modal
 //= require custom
+//= require select2

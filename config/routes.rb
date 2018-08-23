@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :user_courses
     resources :subjects
     resources :user_subjects
+    resources :course_subjects
     resources :courses
     resources :users do
       collection {post :import}

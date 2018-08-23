@@ -4,6 +4,8 @@ class StaticPagesController < ApplicationController
   def home
     @user = User.new
     @user_course = UserCourse.new
+    @course_subject = CourseSubject.new
+    @options = Subject.all
   end
 
   def subject; end
