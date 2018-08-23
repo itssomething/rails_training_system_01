@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get "static_pages/profile"
     get "static_pages/edit_profile"
     post "add_user", to: "user_add_by_trainers#create"
+    post "live_search", to: "live_search_forms#create"
 
     resources :user_courses
     resources :subjects

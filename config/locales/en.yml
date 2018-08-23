@@ -67,4 +67,8 @@ en:
   static_pages:
     home:
       import: "Import"
+  user_courses:
+    new_modal:
+      submit: "Submit"
+      search: "Search"
 

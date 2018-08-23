@@ -13,8 +13,18 @@
 </div>
 <div>
   <h4><%= t ".add_user" %></h4>
-  <button class="btn btn-primary" data-toggle="modal" data-target="#modal-window-add-user">
+  <button class="btn btn-primary" data-toggle="modal"
+    data-target="#modal-window-add-user">
     <%= t ".add_user" %>
   </button>
   <%= render "users/new_modal" %>
 </div>
+<div>
+  <h4><%= t ".create_user_course" %></h4>
+  <button class="btn btn-primary" data-toggle="modal"
+    data-target="#modal-window-create-user-course">
+    <%= t ".create_user_course" %>
+  </button>
+  <%= render "user_courses/new_modal" %>
+</div>
+
