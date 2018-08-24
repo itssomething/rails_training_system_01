@@ -75,6 +75,8 @@ en:
   users:
     new_modal:
       submit: "Submit"
+    import:
+      data_imported: "Data imported"
   static_pages:
     home:
       import: "Import"

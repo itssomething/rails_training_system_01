@@ -1,9 +1,9 @@
 require "roo"
 
 class User < ApplicationRecord
-  has_many :user_courses
-  has_many :user_reports
-  has_many :user_subjects
+  has_many :user_courses, dependent: :destroy
+  has_many :user_reports, dependent: :destroy
+  has_many :user_subjects, dependent: :destroy
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable
 

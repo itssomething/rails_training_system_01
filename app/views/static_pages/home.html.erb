@@ -18,6 +18,9 @@
     <%= t ".add_user" %>
   </button>
   <%= render "users/new_modal" %>
+<div>
+  <%= link_to  t(".all_trainee"), users_path, class: "btn btn-primary"%>
+</div>
 </div>
 <div>
   <h4><%= t ".create_user_course" %></h4>
