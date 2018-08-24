@@ -12,6 +12,10 @@ class User < ApplicationRecord
 
   self.inheritance_column = :role
 
+  def isTrainee
+    self.role == Settings.trainee
+  end
+
   class << self
     def import_file file
       spreadsheet = Roo::Spreadsheet.open file

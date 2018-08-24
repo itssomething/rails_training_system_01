@@ -1,7 +1,10 @@
 Admin.create!(name: "Trainer 1", email: "vdmanh107@gmail.com",
   password: "123456", password_confirmation: "123456")
 
-Admin.create!(name: "Huyen Cherry", email: "huyencherry13796@gmail.com",
+# Admin.create!(name: "Huyen Cherry", email: "huyencherry13796@gmail.com",
+#   password: "123456", password_confirmation: "123456")
+
+Trainee.create!(name: "Manh Khong Dau", email: "manhkhongdau@gmail.com",
   password: "123456", password_confirmation: "123456")
 
 # 10.times do
