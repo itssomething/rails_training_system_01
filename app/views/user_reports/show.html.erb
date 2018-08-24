@@ -94,6 +94,10 @@
               <% end %>
             </tbody>
           </table>
+          <% if current_user.isTrainee %>
+            <%= link_to t("create"), new_user_report_path, class: "btn btn-success",
+              data: {turbolinks: false} %>
+          <% end %>
         </div>
         </div>
       </div>

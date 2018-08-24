@@ -4,7 +4,10 @@ class UserReportsController < ApplicationController
     render template: "user_reports/show"
   end
 
+  def new; end
+
   def create
+    return create_user_report if params[:user_report][:title]
     @start_date = params[:user_report][:start_date]
     @end_date = params[:user_report][:end_date]
     check_input_date
@@ -57,6 +60,22 @@ class UserReportsController < ApplicationController
         .where "created_at < ?", @end_date
     else
       @user_reports = UserReport.where user_subject_id: @user_subjects
+    end
+  end
+
+  def create_user_report
+    user_subject = UserSubject.find_by user_id: current_user,
+      subject_id: params[:user_report][:subject_id]
+    user_report = UserReport.new title: params[:user_report][:title],
+      content: params[:user_report][:content],
+      user_id: current_user.id, user_subject: user_subject
+
+    if user_report.save
+      flash[:success] = t "success"
+      redirect_to user_reports_path
+    else
+      flash[:danger] = t "no_success"
+      render :new
     end
   end
 end

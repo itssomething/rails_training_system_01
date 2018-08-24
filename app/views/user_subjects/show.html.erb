@@ -79,7 +79,8 @@
                 <% end %>
               </tbody>
             </table>
-            <%= link_to t("back"), subjects_path, class: "btn btn-success" %>
+            <%= link_to t("back"), subjects_path, class: "btn btn-success",
+              data: {turbolinks: false} %>
           </div>
         </div>
       </div>

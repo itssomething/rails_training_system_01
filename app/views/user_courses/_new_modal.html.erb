@@ -16,11 +16,6 @@
             class: "form-control field-input" %>
 
           <br>
-          <%= f.label :user_id, t(".user"), class: "field-label" %>
-          <%= f.collection_select :user_id, User.all, :id, :name,
-            class: "form-control field-input" %>
-
-          <br>
           <input type="text" class="form-control" id="search-form">
           <div class="row">
             <div id="response" class="col-md-6"></div>

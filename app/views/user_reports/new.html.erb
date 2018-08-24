@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2><%= t "create_subject" %></h2>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+        <br />
+        <%= form_for :user_report, url: user_reports_path,
+          class:"form-horizontal form-label-left" do |f| %>
+          <div class="form-group row">
+            <%= f.label :subject_id, t("subject_name"),
+              class:"control-label col-md-3 col-sm-3 col-xs-12" %>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <%= f.collection_select :subject_id, current_user.get_subject, :id, :name,
+              class: "form-control field-input" %>
+            </div>
+          </div>
+          <div class="form-group row">
+            <%= f.label :title, t("title"),
+              class:"control-label col-md-3 col-sm-3 col-xs-12" %>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <%= f.text_field :title, required:"required",
+                class: "form-control col-md-7 col-xs-12" %>
+            </div>
+          </div>
+          <div class="form-group row">
+            <%= f.label :content, t("detail"),
+              class:"control-label col-md-3 col-sm-3 col-xs-12" %>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <%= f.text_area :content, required:"required",
+                class: "form-control col-md-7 col-xs-12" %>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="ln_solid"></div>
+          <div class="form-group">
+            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+              <%= link_to t("cancel"), user_reports_path, class: "btn btn-primary" %>
+              <%= f.submit t("create"),
+                class: "btn btn-success submit-button" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
