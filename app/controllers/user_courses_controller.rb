@@ -2,7 +2,6 @@ class UserCoursesController < ApplicationController
   def new; end
 
   def create
-    byebug
     params[:user_ids].split(",").each do |value|
       @user_course = UserCourse.new user_id: value, course_id: params[:course_id]
       if @user_course.save

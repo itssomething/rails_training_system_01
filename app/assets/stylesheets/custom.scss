@@ -5431,6 +5431,15 @@ ul.notifications {
   color: red;
 }
 
-a{
+a {
   cursor: pointer;
+}
+
+#mySelect2 {
+  width: 400px;
+  height: 200px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  color: black;
 }

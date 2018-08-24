@@ -1,8 +1,11 @@
-console.log("request done");
-$('.submit-button').val('Done');
-$('.submit-button').removeClass('btn-primary');
-$('.submit-button').addClass('btn-success');
-setTimeout(
-  function(){
-    $('#modal-window-create-user-course').modal('toggle')
-  }, 2000);
+if('escape_javascript <% @status == 200 %>'){
+  alert('Success');
+  setTimeout(
+    function(){
+      $('#modal-window-create-user-course').modal('toggle');
+    }, 2000);
+
+}
+else{
+  alert('Error');
+}

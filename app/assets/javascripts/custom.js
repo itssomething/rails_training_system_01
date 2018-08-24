@@ -325,6 +325,12 @@ if (typeof NProgress != 'undefined') {
 
 // TRULLY CUSTOM JS
 $(document).on('turbolinks:load', function() {
+
+  // SELECT 2
+  $.fn.modal.Constructor.prototype.enforceFocus = function() {
+    $('.js-example-basic-multiple').select2();
+  };
+
   var userids = [];
 
   // DYNAMIC ADD TRAINEE TYPE SELECTOR WHEN SELECT TRAINEE
